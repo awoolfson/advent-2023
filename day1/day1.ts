@@ -1,4 +1,4 @@
-function main() {
+function main1() {
     const fs = require('node:fs');
     const data = fs.readFileSync('day1/input.txt', 'utf8');
     const lines = data.split('\n')
@@ -46,7 +46,6 @@ function main() {
             if (j >= 2) {
                 for (var k = j - 3; (k > (j - 6)) && (k >= 0); k--) {
                     var text = lines[i].substring(k, j);
-                    console.log(text);
                     if (nums[text] != undefined) {
                         number += nums[text];
                         break outer;
@@ -69,7 +68,6 @@ function main() {
             if (j <= lines[i].length - 3) {
                 for (var k = j + 3; (k < (j + 6)) && (k <= lines[i].length); k++) {
                     var text = lines[i].substring(j, k);
-                    console.log(text);
                     if (nums[text] != undefined) {
                         number += nums[text];
                         break outer;
@@ -87,8 +85,6 @@ function main() {
             number += lines[i][j];
         }
 
-        console.log(lines[i], number);
-
         if (/\d\d/.test(number)) {
             sum += parseInt(number);
         }
@@ -97,4 +93,4 @@ function main() {
     console.log(sum);
 }
 
-main();
+main1();
